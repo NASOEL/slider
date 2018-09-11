@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mes photo</title>
+</head>
+<body>
+   <center><h2>notre promo"KEULOUMAK" </h2>
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="image/grpe4.jpg" style="width:100%">
+        <img class="mySlides" src="image/grpe1.jpg" style="width:100%">
+        <img class="mySlides" src="image/grpe2.jpg" style="width:100%">
+        <img class="mySlides" src="image/grpe3.jpg" style="width:100%">
+       <!-- botton pour le slide -->
+        
+         <button class="w3-button w3-black w3-display-left" onclick="plus(-1)">&#10094;</button> 
+        <button class="w3-button w3-black w3-display-right" onclick="plus(1)">&#10095;</button>
+    </center> 
+      </div>
+      <script>
+        var photo = 1;
+        slide(photo );
+        
+        function plus(n) {
+            slide(photo += n);
+        }
+        
+        function slide(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {photo = 1}    
+          if (n < 1) {photo  = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          x[photo -1].style.display = "block";  
+        }
+        </script>
+        <style>
+            button{
+                position: relative;
+                background-color:darksalmon;
+            }
+        </style>
+</body>
+</html>
